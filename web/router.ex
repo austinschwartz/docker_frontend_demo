@@ -19,8 +19,11 @@ defmodule Demo.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Demo do
-  #   pipe_through :api
-  # end
+  scope "/problem", Demo do
+    pipe_through :browser
+
+    get "/:id", ProblemController, :problem
+    post "/:id", ProblemController, :submit
+    get "/:id/run/:test_id", ProblemController, :test
+  end
 end

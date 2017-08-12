@@ -1,0 +1,186 @@
+<style>
+p img {
+    display: block;
+    margin: 0 auto;
+}
+</style>
+
+<div class="challenge-content"><div class="container fs-container">
+    <div class="row">
+        <div class="span-sm-11 hr_tour-problem-statement problem-statement">
+            <div class="content-text challenge-text mlB">
+                <div class="challenge_problem_statement"><div class="msB challenge_problem_statement_body"><div class="hackdown-content"><style id="MathJax_SVG_styles">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.mjx-svg-href {fill: blue; stroke: blue}
+.MathJax_SVG_LineBox {display: table!important}
+.MathJax_SVG_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+</style><svg style="display: none;"><defs id="MathJax_SVG_glyphs"></defs></svg><p><img src="https://s3.amazonaws.com/hr-assets/0/1492215698-1fd7933b45-26pgEBNWnM-4.png" alt="image" title=""></p>
+
+<p>Diane has worked as a research scientist and educator in the academic, government and non-profit sectors. In 1996, she founded <strong>The Lobster Conservancy</strong> with a vision of building a bridge to join all those sharing the common goal of maintaining a strong and healthy lobster resource.</p>
+
+<p>Lately, Diane has been having trouble identifying lobsters in the wild. In graph representation, a lobster is an <code>undirected graph</code> which contains a simple cycle, where 3 or more nodes on the cycle form rooted trees (these trees being the lobsters tail + two claws, and also maybe including its legs).</p>
+
+<p>Given a graph with with <code>n</code> vertices and <code>m</code> edges, help Diane determine if it is a lobster or not.</p>
+
+<p>Worded another way, a lobster is a set of 3 or more rooted trees, where all of their roots form a simple cycle.</p>
+
+<p>Note: A simple cycle is a cycle that includes no repeated vertices/edges, except the start/end vertex.</p></div></div></div><div class="challenge_input_format"><div class="msB challenge_input_format_title"><p><strong>Input Format</strong></p></div><div class="msB challenge_input_format_body"><div class="hackdown-content"><style id="MathJax_SVG_styles">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.mjx-svg-href {fill: blue; stroke: blue}
+.MathJax_SVG_LineBox {display: table!important}
+.MathJax_SVG_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+</style><svg style="display: none;"><defs id="MathJax_SVG_glyphs"></defs></svg><p>First line contains <code>n</code>, the number of vertices, and <code>m</code>, the number of edges. Each of the following lines contains a pair of numbers <code>x y</code>, meaning there is an edge between x and y.</p>
+
+<p>For every pair of edges, there will be either 0 or 1 edges between them, and no self-loops can exist.</p></div></div></div><div class="challenge_constraints"><div class="msB challenge_constraints_title"><p><strong>Constraints</strong></p></div><div class="msB challenge_constraints_body"><div class="hackdown-content"><style id="MathJax_SVG_styles">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.mjx-svg-href {fill: blue; stroke: blue}
+.MathJax_SVG_LineBox {display: table!important}
+.MathJax_SVG_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+</style><svg style="display: none;"><defs id="MathJax_SVG_glyphs"></defs></svg><p><code>1 &lt;= n &lt;= 100</code></p>
+
+<p><code>0 &lt;= m &lt;= n*(n-1)/2</code></p></div></div></div><div class="challenge_output_format"><div class="msB challenge_output_format_title"><p><strong>Output Format</strong></p></div><div class="msB challenge_output_format_body"><div class="hackdown-content"><style id="MathJax_SVG_styles">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.mjx-svg-href {fill: blue; stroke: blue}
+.MathJax_SVG_LineBox {display: table!important}
+.MathJax_SVG_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+</style><svg style="display: none;"><defs id="MathJax_SVG_glyphs"></defs></svg><p>Print "Lobster" if the graph is a lobster</p>
+
+<p>Print "No Lobster" if it isn't</p></div></div></div><div class="challenge_sample_input"><div class="msB challenge_sample_input_title"><p><strong>Sample Input 0</strong></p></div><div class="msB challenge_sample_input_body"><div class="hackdown-content"><style id="MathJax_SVG_styles">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.mjx-svg-href {fill: blue; stroke: blue}
+.MathJax_SVG_LineBox {display: table!important}
+.MathJax_SVG_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+</style><svg style="display: none;"><defs id="MathJax_SVG_glyphs"></defs></svg><div class="highlight"><pre><span></span><span class="err">6 6</span>
+<span class="err">1 2</span>
+<span class="err">1 3</span>
+<span class="err">2 3</span>
+<span class="err">4 1</span>
+<span class="err">2 6</span>
+<span class="err">5 3</span>
+</pre></div>
+</div></div></div><div class="challenge_sample_output"><div class="msB challenge_sample_output_title"><p><strong>Sample Output 0</strong></p></div><div class="msB challenge_sample_output_body"><div class="hackdown-content"><style id="MathJax_SVG_styles">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.mjx-svg-href {fill: blue; stroke: blue}
+.MathJax_SVG_LineBox {display: table!important}
+.MathJax_SVG_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+</style><svg style="display: none;"><defs id="MathJax_SVG_glyphs"></defs></svg><div class="highlight"><pre><span></span><span class="err">Lobster</span>
+</pre></div>
+</div></div></div><div class="challenge_explanation"><div class="msB challenge_explanation_title"><p><strong>Explanation 0</strong></p></div><div class="msB challenge_explanation_body"><div class="hackdown-content"><style id="MathJax_SVG_styles">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.mjx-svg-href {fill: blue; stroke: blue}
+.MathJax_SVG_LineBox {display: table!important}
+.MathJax_SVG_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+</style><svg style="display: none;"><defs id="MathJax_SVG_glyphs"></defs></svg><p><img src="https://s3.amazonaws.com/hr-assets/0/1492216610-02ccd970e0-graph.png" alt="image" title=""></p>
+
+<p>This graph does indeed have 3 or more rooted trees, where the tree roots are attached in a simple cycle.</p></div></div></div><div class="challenge_sample_input"><div class="msB challenge_sample_input_title"><p><strong>Sample Input 1</strong></p></div><div class="msB challenge_sample_input_body"><div class="hackdown-content"><style id="MathJax_SVG_styles">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.mjx-svg-href {fill: blue; stroke: blue}
+.MathJax_SVG_LineBox {display: table!important}
+.MathJax_SVG_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+</style><svg style="display: none;"><defs id="MathJax_SVG_glyphs"></defs></svg><div class="highlight"><pre><span></span><span class="err">6 5</span>
+<span class="err">1 2</span>
+<span class="err">1 3</span>
+<span class="err">4 1</span>
+<span class="err">2 6</span>
+<span class="err">5 3</span>
+</pre></div>
+</div></div></div><div class="challenge_sample_output"><div class="msB challenge_sample_output_title"><p><strong>Sample Output 1</strong></p></div><div class="msB challenge_sample_output_body"><div class="hackdown-content"><style id="MathJax_SVG_styles">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.mjx-svg-href {fill: blue; stroke: blue}
+.MathJax_SVG_LineBox {display: table!important}
+.MathJax_SVG_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+</style><svg style="display: none;"><defs id="MathJax_SVG_glyphs"></defs></svg><div class="highlight"><pre><span></span><span class="err">No Lobster</span>
+</pre></div>
+</div></div></div><div class="challenge_explanation"><div class="msB challenge_explanation_title"><p><strong>Explanation 1</strong></p></div><div class="msB challenge_explanation_body"><div class="hackdown-content"><style id="MathJax_SVG_styles">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.mjx-svg-href {fill: blue; stroke: blue}
+.MathJax_SVG_LineBox {display: table!important}
+.MathJax_SVG_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+</style><svg style="display: none;"><defs id="MathJax_SVG_glyphs"></defs></svg><p><img src="https://s3.amazonaws.com/hr-assets/0/1492216744-7f62948030-graph1.png" alt="image" title=""></p>
+
+<p>This graph doesn't have a simple cycle anywhere, so isn't a lobster.</p></div></div></div>
+            </div>
+            
+
+            
+        </div>
+
+        <aside class="span-sm-4 pull-right fullscreen-hide challenge-sidebar">
+            <div class="challenge-sidebar-container">
+        </div></aside>
+
+        
+    </div>
+</div>
+</div>
+
+<br/>
+
+<div>
+
+<%= form_for @conn, problem_path(@conn, :submit, @id), [as: :submit], fn f -> %>
+
+  <label>
+    Name: <%= text_input f, :name %>
+  </label>
+
+  <pre id="editor"></pre>
+
+  <%= textarea f, :editor, [style: "display: none", name: "editor"] %>
+
+  <%= submit "Submit", [class: "btn btn-primary"] %>
+
+<% end %>
+
+</div>
+
+<script src="/js/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/dracula");
+    editor.session.setMode("ace/mode/java");
+    editor.renderer.setScrollMargin(10, 10);
+    editor.setOptions({
+      maxLines: 150
+    });
+
+	var textarea = $('textarea[name="editor"]');
+
+	editor.session.on("change", function () {
+			textarea.val(editor.session.getValue());
+  });
+
+editor.session.setValue("public class Main(){\n    public static void main(String... args){\n        \n    }\n}");
+
+</script>
+

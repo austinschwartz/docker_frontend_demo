@@ -1,0 +1,36 @@
+<style>
+p img {
+    display: block;
+    margin: 0 auto;
+}
+</style>
+
+<span>tests</span>
+<div>
+<%= form_for @conn, problem_path(@conn, :submit, @id), [as: :submit], fn f -> %>
+
+  <label>
+    Username: <%= text_input f, :name %>
+  </label>
+	<pre id="editor">
+public class Main {
+	public static void main(String... args) {
+		
+	}
+}</pre>
+  <button class="btn btn-primary">Submit</button>
+<% submit "Submit" %>
+<% end %>
+
+
+	<script src="/js/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+			var editor = ace.edit("editor");
+			editor.setTheme("ace/theme/dracula");
+			editor.session.setMode("ace/mode/java");
+			editor.renderer.setScrollMargin(10, 10);
+			editor.setOptions({
+				maxLines: 150
+			});
+  </script>
+</div>

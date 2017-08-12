@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Hello Demo!</title>
+    <meta name="csrf" content="<%= Plug.CSRFProtection.get_csrf_token() %>">
+    <title>boilerOJ</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -16,10 +20,10 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+            <li><a href="/">Home</a></li>
           </ul>
         </nav>
-        <span class="logo"></span>
+        <span>BoilerOJ<span>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
