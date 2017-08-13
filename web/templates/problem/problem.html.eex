@@ -180,7 +180,7 @@ p img {
 			textarea.val(editor.session.getValue());
   });
 
-editor.session.setValue("public class Main(){\n    public static void main(String... args){\n        \n    }\n}");
+editor.session.setValue("public class Main {\n    public static void main(String... args){\n        \n    }\n}");
 
 </script>
 

@@ -63,14 +63,44 @@ defmodule Demo.RunController do
     |> redirect(to: run_path(conn, :index))
   end
 
-  def cocks(%{
-      "id" => id,
-      "code" => code,
-      "username" => username
+  def start(%{
+      problem_id: problem_id,
+      code: code,
+      language: language,
+      username: username
     }) do
       {:ok, run} = 
-    Run.changeset(%Demo.Run{}, %{"user" => username, "problem_id" => id}) |> Demo.Repo.insert()
+    Run.changeset(%Demo.Run{}, %{"user" => username, "problem_id" => problem_id}) |> Demo.Repo.insert()
+
+    tests = 10
+
+    # TODO pull test case from db, look at which tests we care about
+    
+    temp_dir = "#{Juice.testcases_src}/0000#{problem_id}/#{username}"
+
+    File.mkdir(temp_dir)
+    File.chmod(temp_dir, 0o755)
+
+    temp_file = "#{temp_dir}/Main.java"
+    File.touch temp_file
+    File.chmod(temp_file, 0o755)
+
+    File.write(temp_file, code)
+
+    File.close temp_file
+
     IO.inspect "creating run #{run.id}"
+    out = 1..tests |> Enum.map(
+      fn(x) -> 
+        test_file = "#{temp_dir}/#{x}.txt"
+        File.touch test_file
+        File.chmod(test_file, 0o777)
+        System.cmd "javac", ["#{temp_file}"]
+        Juice.test(username, "0000#{problem_id}", "#{x}", language)
+      end) 
+    IO.inspect out
+    
+
     run
   end
 end

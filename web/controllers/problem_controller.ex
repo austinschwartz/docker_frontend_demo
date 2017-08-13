@@ -66,14 +66,14 @@ defmodule Demo.ProblemController do
   def submit(conn, %{"id" => id, "editor" => code, "submit" => %{"name" => username}}) do
     IO.inspect "user: #{username} submitted code: #{code} for problem #{id}"
 
-    run = Demo.RunController.cocks(%{
-      "id" => id,
-      "code" => code,
-      "username" => username
+    run = Demo.RunController.start(%{
+      problem_id: id,
+      code: code,
+      language: "Java",
+      username: username
     })
 
     conn
     |> redirect(to: "/runs/#{run.id}")
-
   end
 end
