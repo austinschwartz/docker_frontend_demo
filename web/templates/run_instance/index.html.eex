@@ -1,0 +1,28 @@
+<h2>Listing runinstances</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Run</th>
+      <th>Testcase</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for run_instance <- @runinstances do %>
+    <tr>
+      <td><%= run_instance.run_id %></td>
+      <td><%= run_instance.testcase_id %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: run_instance_path(@conn, :show, run_instance), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: run_instance_path(@conn, :edit, run_instance), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: run_instance_path(@conn, :delete, run_instance), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New run instance", to: run_instance_path(@conn, :new) %>

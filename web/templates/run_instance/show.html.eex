@@ -1,0 +1,18 @@
+<h2>Show run instance</h2>
+
+<ul>
+
+  <li>
+    <strong>Run:</strong>
+    <%= @run_instance.run_id %>
+  </li>
+
+  <li>
+    <strong>Testcase:</strong>
+    <%= @run_instance.testcase_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: run_instance_path(@conn, :edit, @run_instance) %>
+<%= link "Back", to: run_instance_path(@conn, :index) %>

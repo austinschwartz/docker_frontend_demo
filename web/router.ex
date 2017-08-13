@@ -17,13 +17,18 @@ defmodule Demo.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+
+    resources "/testcases", TestcaseController
+    resources "/problems", ProblemController 
+    resources "/runs", RunController  
+    resources "/runinstances", RunInstanceController
   end
 
-  scope "/problem", Demo do
+  scope "/problems", Demo do
     pipe_through :browser
 
-    get "/:id", ProblemController, :problem
     post "/:id", ProblemController, :submit
     get "/:id/run/:test_id", ProblemController, :test
   end
+
 end

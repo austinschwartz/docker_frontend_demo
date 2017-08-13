@@ -148,7 +148,7 @@ p img {
 
 <div>
 
-<%= form_for @conn, problem_path(@conn, :submit, @id), [as: :submit], fn f -> %>
+<%= form_for @conn, problem_path(@conn, :submit, @problem.id), [as: :submit], fn f -> %>
 
   <label>
     Name: <%= text_input f, :name %>

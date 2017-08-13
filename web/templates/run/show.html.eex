@@ -1,0 +1,18 @@
+<h2>Show run</h2>
+
+<ul>
+
+  <li>
+    <strong>User:</strong>
+    <%= @run.user %>
+  </li>
+
+  <li>
+    <strong>Problem:</strong>
+    <%= @run.problem_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: run_path(@conn, :edit, @run) %>
+<%= link "Back", to: run_path(@conn, :index) %>

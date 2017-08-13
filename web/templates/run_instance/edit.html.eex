@@ -1,0 +1,6 @@
+<h2>Edit run instance</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: run_instance_path(@conn, :update, @run_instance) %>
+
+<%= link "Back", to: run_instance_path(@conn, :index) %>

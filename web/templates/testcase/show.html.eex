@@ -1,0 +1,38 @@
+<h2>Show testcase</h2>
+
+<ul>
+
+  <li>
+    <strong>Inputfile:</strong>
+    <%= @testcase.inputfile %>
+  </li>
+
+  <li>
+    <strong>Outputfile:</strong>
+    <%= @testcase.outputfile %>
+  </li>
+
+  <li>
+    <strong>Strength:</strong>
+    <%= @testcase.strength %>
+  </li>
+
+  <li>
+    <strong>Enabled:</strong>
+    <%= @testcase.enabled %>
+  </li>
+
+  <li>
+    <strong>Sample:</strong>
+    <%= @testcase.sample %>
+  </li>
+
+  <li>
+    <strong>Problem:</strong>
+    <%= @testcase.problem_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: testcase_path(@conn, :edit, @testcase) %>
+<%= link "Back", to: testcase_path(@conn, :index) %>

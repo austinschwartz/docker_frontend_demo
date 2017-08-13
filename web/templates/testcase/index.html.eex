@@ -1,0 +1,36 @@
+<h2>Listing testcases</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Inputfile</th>
+      <th>Outputfile</th>
+      <th>Strength</th>
+      <th>Enabled</th>
+      <th>Sample</th>
+      <th>Problem</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for testcase <- @testcases do %>
+    <tr>
+      <td><%= testcase.inputfile %></td>
+      <td><%= testcase.outputfile %></td>
+      <td><%= testcase.strength %></td>
+      <td><%= testcase.enabled %></td>
+      <td><%= testcase.sample %></td>
+      <td><%= testcase.problem_id %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: testcase_path(@conn, :show, testcase), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: testcase_path(@conn, :edit, testcase), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: testcase_path(@conn, :delete, testcase), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New testcase", to: testcase_path(@conn, :new) %>
