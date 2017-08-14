@@ -106,9 +106,8 @@ defmodule Demo.RunInstanceController do
     Demo.RunInstance.changeset(%Demo.RunInstance{}, 
       changeset)
       |> Demo.Repo.insert()
-    IO.inspect res
 
-    IO.puts "need to build something from it, and send a msg to some channel when done"
+    Demo.Endpoint.broadcast "run", "run_instance", changeset
     res
   end
 end
