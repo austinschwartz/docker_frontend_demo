@@ -7,6 +7,7 @@ defmodule Demo.Repo.Migrations.CreateRunInstance do
       add :status, :string
       add :message, :string
       add :diff, :text
+      add :time, :integer
       add :run_id, references(:runs, on_delete: :nothing)
       add :testcase_id, references(:testcases, on_delete: :nothing)
 
@@ -14,5 +15,6 @@ defmodule Demo.Repo.Migrations.CreateRunInstance do
     end
     create index(:runinstances, [:run_id])
     create index(:runinstances, [:testcase_id])
+
   end
 end

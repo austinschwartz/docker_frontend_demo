@@ -63,6 +63,14 @@ defmodule Demo.RunInstanceController do
     |> redirect(to: run_instance_path(conn, :index))
   end
 
+	def get_time(%{output: _, time: time}), do: time
+
+	def get_time(_), do: -1
+
+	def get_status(status) when is_atom(status), do: Atom.to_string(status)
+
+	def get_status(status), do: status
+
   def build(
       username: username, 
       problem_id: problem_id, 
@@ -78,13 +86,18 @@ defmodule Demo.RunInstanceController do
     System.cmd "javac", ["#{temp_file}"]
 
     res = Juice.test(username, "0000#{problem_id}", "#{testcase_id}", language)
+		diff = if res.diff, do: res.diff, else: ""
+		
+		time = get_time(res.result)
+		status = get_status(res.status)
 
     IO.puts "RES"
+		IO.inspect res
     changeset = %{"user" => "nonis",
-        "status" => res.status |> Atom.to_string(),
+        "status" => status,
         "message" => res.message,
-        "diff" => res.diff,
-        "problem_id" => problem_id,
+        "diff" => diff,
+				"time" => time,
         "testcase_id" => testcase_id,
         "run_id" => run_id,
       }

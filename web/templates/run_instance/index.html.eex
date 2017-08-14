@@ -9,6 +9,7 @@
       <th>Status</th>
       <th>Message</th>
       <th>Diff</th>
+      <th>Time</th>
 
       <th></th>
     </tr>
@@ -22,6 +23,7 @@
       <td><%= run_instance.status %></td>
       <td><%= run_instance.message %></td>
       <td><%= run_instance.diff %></td>
+      <td><%= run_instance.time %></td>
 
       <td class="text-right">
         <%= link "Show", to: run_instance_path(@conn, :show, run_instance), class: "btn btn-default btn-xs" %>

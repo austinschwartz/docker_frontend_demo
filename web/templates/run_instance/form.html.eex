@@ -13,7 +13,7 @@
 
   <div class="form-group">
     <%= label f, :status, class: "control-label" %>
-    <%= checkbox f, :status, class: "form-control" %>
+    <%= text_input f, :status, class: "form-control" %>
     <%= error_tag f, :status %>
   </div>
 
@@ -27,6 +27,12 @@
     <%= label f, :diff, class: "control-label" %>
     <%= textarea f, :diff, class: "form-control" %>
     <%= error_tag f, :diff %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :time, class: "control-label" %>
+    <%= number_input f, :time, class: "form-control" %>
+    <%= error_tag f, :time %>
   </div>
 
   <div class="form-group">
