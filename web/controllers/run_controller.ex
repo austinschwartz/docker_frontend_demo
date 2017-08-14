@@ -72,10 +72,6 @@ defmodule Demo.RunController do
       {:ok, run} = 
     Run.changeset(%Demo.Run{}, %{"user" => username, "problem_id" => problem_id}) |> Demo.Repo.insert()
 
-    tests = 10
-
-    # TODO pull test case from db, look at which tests we care about
-    
     temp_dir = "#{Juice.testcases_src}/0000#{problem_id}/#{username}"
 
     File.mkdir(temp_dir)
@@ -90,17 +86,24 @@ defmodule Demo.RunController do
     File.close temp_file
 
     IO.inspect "creating run #{run.id}"
-    out = 1..tests |> Enum.map(
-      fn(x) -> 
-        test_file = "#{temp_dir}/#{x}.txt"
-        File.touch test_file
-        File.chmod(test_file, 0o777)
-        System.cmd "javac", ["#{temp_file}"]
-        Juice.test(username, "0000#{problem_id}", "#{x}", language)
-      end) 
+    out = Demo.Testcase 
+      |> Demo.Testcase.for_problem(problem_id) 
+      |> Demo.Repo.all
+      |> Enum.each(
+        fn(testcase) ->
+          spawn fn ->
+            Demo.RunInstanceController.build(
+              username: username, 
+              problem_id: problem_id, 
+              testcase_id: testcase.id,
+              temp_dir: temp_dir,
+              temp_file: temp_file,
+              language: language,
+              run_id: run.id
+            )
+          end
+        end) 
     IO.inspect out
-    
-
     run
   end
 end

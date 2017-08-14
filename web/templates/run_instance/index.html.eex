@@ -5,6 +5,10 @@
     <tr>
       <th>Run</th>
       <th>Testcase</th>
+      <th>User</th>
+      <th>Status</th>
+      <th>Message</th>
+      <th>Diff</th>
 
       <th></th>
     </tr>
@@ -14,6 +18,10 @@
     <tr>
       <td><%= run_instance.run_id %></td>
       <td><%= run_instance.testcase_id %></td>
+      <td><%= run_instance.user %></td>
+      <td><%= run_instance.status %></td>
+      <td><%= run_instance.message %></td>
+      <td><%= run_instance.diff %></td>
 
       <td class="text-right">
         <%= link "Show", to: run_instance_path(@conn, :show, run_instance), class: "btn btn-default btn-xs" %>

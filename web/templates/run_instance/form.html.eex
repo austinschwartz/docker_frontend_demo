@@ -6,6 +6,30 @@
   <% end %>
 
   <div class="form-group">
+    <%= label f, :user, class: "control-label" %>
+    <%= text_input f, :user, class: "form-control" %>
+    <%= error_tag f, :user %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :status, class: "control-label" %>
+    <%= checkbox f, :status, class: "form-control" %>
+    <%= error_tag f, :status %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :message, class: "control-label" %>
+    <%= text_input f, :message, class: "form-control" %>
+    <%= error_tag f, :message %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :diff, class: "control-label" %>
+    <%= textarea f, :diff, class: "form-control" %>
+    <%= error_tag f, :diff %>
+  </div>
+
+  <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>

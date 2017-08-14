@@ -2,7 +2,7 @@ defmodule Demo.RunInstanceControllerTest do
   use Demo.ConnCase
 
   alias Demo.RunInstance
-  @valid_attrs %{}
+  @valid_attrs %{diff: "some content", message: "some content", status: true, user: "some content"}
   @invalid_attrs %{}
 
   test "lists all entries on index", %{conn: conn} do

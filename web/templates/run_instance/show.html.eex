@@ -12,6 +12,26 @@
     <%= @run_instance.testcase_id %>
   </li>
 
+  <li>
+    <strong>User:</strong>
+    <%= @run_instance.user %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @run_instance.status %>
+  </li>
+
+  <li>
+    <strong>Message:</strong>
+    <%= @run_instance.message %>
+  </li>
+
+  <li>
+    <strong>Diff:</strong>
+    <%= @run_instance.diff %>
+  </li>
+
 </ul>
 
 <%= link "Edit", to: run_instance_path(@conn, :edit, @run_instance) %>

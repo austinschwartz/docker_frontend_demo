@@ -3,7 +3,7 @@ defmodule Demo.RunInstanceTest do
 
   alias Demo.RunInstance
 
-  @valid_attrs %{}
+  @valid_attrs %{diff: "some content", message: "some content", status: true, user: "some content"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
