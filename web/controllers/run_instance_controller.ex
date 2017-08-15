@@ -93,7 +93,8 @@ defmodule Demo.RunInstanceController do
 
     IO.puts "RES"
 		IO.inspect res
-    changeset = %{"user" => "nonis",
+    changeset = %{
+        "user" => username,
         "status" => status,
         "message" => res.message,
         "diff" => diff,
